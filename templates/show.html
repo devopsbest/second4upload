@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show file</title>
+</head>
+<body>
+
+<div class="panel-body">
+
+    {% for file in files %}
+        <p>
+            {{ file }}
+            <a href={{ url_for('show_photo',filename=file) }}>显示</a>
+            <a href={{ url_for('download',filename=file) }}>下载</a>
+        <a href={{ url_for('delete_photo',filename=file) }}>删除</a>
+        </p>
+    {% endfor %}
+    {% for v in get_flashed_messages() %}
+        <p style="color:green;">{{ v }}</p>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

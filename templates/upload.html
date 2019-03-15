@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload files</title>
+</head>
+<body>
+
+<form id="form1" method="post" action="/api/upload" enctype="multipart/form-data">
+    <div>
+        <input id="File1" type="file" name="myfile"/>
+        <input type="submit">提交</input>
+    </div>
+    <div>
+        <a href={{ url_for("show")}}>show all</a>
+    </div>
+        {% for v in get_flashed_messages() %}
+        <p style="color:green;">{{ v }}</p>
+    {% endfor %}
+
+</form>
+
+</body>
+</html>
